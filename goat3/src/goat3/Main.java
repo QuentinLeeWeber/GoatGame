@@ -14,6 +14,7 @@ public class Main {
 		float roundwithoutchange = 0;
 		float v1 = 0;
 		float v2 = 0;
+		float progress = 0;
 		
 		
 		int random = 0;
@@ -92,11 +93,14 @@ public class Main {
 				try {
 					v2 = (float)((wonwithoutchange / roundwithoutchange) * 100);
 				} catch (Exception e) {}
+				try {
+					progress = (((roundwithoutchange + roundswithchange) / loops * 2) / 4) * 100;
+				} catch (Exception e) {}
 				if(b == 0) {
-					System.out.println("field:  " + field[0]+" "+field[1]+" "+field[2] + "  choosen:  " + changefield[0] + " " + changefield[1] + " " + changefield[2] + "  discovered:  " + discoverfield[0] + " " + discoverfield[1] + " " + discoverfield[2] + "  changed?:  " + changed + "  won?:  " + won + "  " 
+					System.out.println((Math.round(progress * 100) / 100)+"%  field:  " + field[0]+" "+field[1]+" "+field[2] + "  choosen:  " + changefield[0] + " " + changefield[1] + " " + changefield[2] + "  discovered:  " + discoverfield[0] + " " + discoverfield[1] + " " + discoverfield[2] + "  changed?:  " + changed + "  won?:  " + won + "  " 
 						+Math.round(wonwithchange)+"/"+Math.round(roundswithchange)+" "+Math.round(v1)+"%");
 				} else {
-					System.out.println("field:  "+field[0]+" "+field[1]+" "+field[2] + "  choosen:  " + changefield[0] + " " + changefield[1] + " " + changefield[2] + "  discovered:  " + discoverfield[0] + " " + discoverfield[1] + " " + discoverfield[2] + "  changed?:  " + changed + "  won?:  " + won + "  " 
+					System.out.println((Math.round(progress * 100) / 100)+"%  field:  "+field[0]+" "+field[1]+" "+field[2] + "  choosen:  " + changefield[0] + " " + changefield[1] + " " + changefield[2] + "  discovered:  " + discoverfield[0] + " " + discoverfield[1] + " " + discoverfield[2] + "  changed?:  " + changed + "  won?:  " + won + "  " 
 							+Math.round(wonwithoutchange)+"/"+Math.round(roundwithoutchange)+" "+Math.round(v2)+"%");
 				}
 			}
